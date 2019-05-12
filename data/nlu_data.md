@@ -1,7 +1,7 @@
 <!--- Make sure to update this training data file with more training examples from https://forum.rasa.com/t/rasa-starter-pack/704 --> 
 
 ## intent:goodbye <!--- The label of the intent --> 
-- Bye 			<!--- Training examples for intent 'bye'--> 
+- Bye
 - Goodbye
 - See you later
 - Bye bot
@@ -59,65 +59,69 @@
 - yes yes yes
 - definitely
 
-
-## intent:name
-- My name is [Juste](name)  <!--- Square brackets contain the value of entity while the text in parentheses is a a label of the entity --> 
-- I am [Josh](name)
-- I'm [Lucy](name)
-- People call me [Greg](name)
-- It's [David](name)
-- Usually people call me [Amy](name)
-- My name is [John](name)
-- You can call me [Sam](name)
-- Please call me [Linda](name)
-- Name name is [Tom](name)
-- I am [Richard](name)
-- I'm [Tracy](name)
-- Call me [Sally](name)
-- I am [Philipp](name)
-- I am [Charlie](name)
-- I am [Charlie](name)
-- I am [Ben](name)
-- Call me [Susan](name)
-- [Lucy](name)
-- [Peter](name)
-- [Mark](name)
-- [Joseph](name)
-- [Tan](name)
-- [Pete](name)
-- [Elon](name)
-- [Penny](name)
-- name is [Andrew](name)
-- I [Lora](name)
-- [Stan](name) is my name
-- [Susan](name) is the name
-- [Ross](name) is my first name
-- [Bing](name) is my last name
-- Few call me as [Angelina](name)
-- Some call me [Julia](name)
-- Everyone calls me [Laura](name)
-- I am [Ganesh](name)
-- My name is [Mike](name)
-- just call me [Monika](name)
-- Few call [Dan](name)
-- You can always call me [Suraj](name)
-- Some will call me [Andrew](name)
-- My name is [Ajay](name)
-- I call [Ding](name)
-- I'm [Partia](name)
-- Please call me [Leo](name)
-- name is [Pari](name)
-- name [Sanjay](name)
+## intent:code
+- I'd like to know about [cbk90498](code)
+- What is [maj08441](code)
+- Do you know about [cbk90486](code)
+- Please tell me what subject is [97504](code)
+- Details for subject [978430](code)
+- What major is [maj09437](code)
+- Please tell me about ['Bachelor of Science in Information Technology'](name)
+- What is ['Analytics Capstone Project'](name)
+- Do you know what ['Applications Programming'](name) is
+- e\
 
 
-## intent:joke
-- Can you tell me a joke?
-- I would like to hear a joke
-- Tell me a joke
-- A joke please
-- Tell me a joke please
-- I would like to hear a joke
-- I would loke to hear a joke, please
-- Can you tell jokes?
-- Please tell me a joke
-- I need to hear a joke
+## intent:courses
+- Can you show me the courses at UTS
+- I would like to know the courses at UTS
+- Courses please
+- Tell me the courses at UTS please
+- I would like to hear the courses
+- I would loke to hear the courses, please
+- Can you tell me the courses
+- Please tell me the courses
+
+## intent:honours
+- Is the course a honours degree
+- Does the course come with honurs
+- Does the course come with honors
+- Is it honours
+- Is [c90119](code) a honor degree
+- Does [c10245](code) come with honours
+
+## intent:combined
+- Is the course a combined degree
+- Is [c10148](code) a combine degree
+- Is [c10348](code) a combined degree
+- Does [c10345](code) come with two degrees
+- Is the course a combine degree
+- Is the course a double degree
+- is [c10259](code) a double degree
+- is [19521](code) combine degree
+
+## intent::duration
+- How long is the course
+- How many years is one course?
+- How many years is [c09019](code)
+- How long is [c12450](code)
+
+## intent::credit_points
+- How many credit points are in the course?
+- How may credit points do I need to complete to graduate?
+- How many cp is in the course?
+- How many cp for [c18623](code)
+- How many credit points in [c91293](code)
+- How many credit points is the subject?
+- How mny cp is subject [19532](code)
+
+## intent::child
+- What are the contents of [c91953](code)
+- What subjects are in the major?
+- What subjects are in major [19238](code)
+- Can you tell me what are in [19533](code)
+- What do i need to take in [12221](code)
+- What majors in the subject?
+- What do i need to take for [c10294](code)
+- What are the subjects in [cbk19284](code)
+

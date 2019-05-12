@@ -11,6 +11,10 @@ type_dict = {
 cp_length = 3
 id_length = 8
 
+default_cpath = 'data/courses.csv'
+default_rpath = 'data/relations.csv'
+default_ipath = 'data/items.csv'
+
 
 def extract_digits(key):
     return ''.join(k for k in key if k.isdigit())
@@ -100,8 +104,11 @@ class Course(Substructure):
 class Directory:
     def __init__(self, cpath = None, ipath = None, rpath = None):
         self._substructures = []
-        if cpath is not None and ipath is not None and rpath is not None:
-            self.read_csv(cpath, ipath, rpath)
+        if cpath is None and ipath is None and rpath is None:
+            cpath = default_cpath
+            ipath = default_ipath
+            rpath = default_rpath
+        self.load_csv(cpath, ipath, rpath)
 
     def add(self, substructure):
         self._substructures.append(substructure)
@@ -166,4 +173,5 @@ class Directory:
     def all(self):
         return [sb for sb in self._substructures if not sb.is_type('xbk')]
 
-    def
+d = Directory()
+print(d['c09119'])
