@@ -1,6 +1,6 @@
-## story_greet <!--- The name of the story. It is not mandatory, but useful for debugging. --> 
-* greet <!--- User input expressed as intent. In this case it represents users message 'Hello'. --> 
- - utter_name <!--- The response of the chatbot expressed as an action. In this case it represents chatbot's response 'Hello, how can I help?' --> 
+## story_greet
+* greet
+ - utter_greet
  
 ## story_goodbye
 * goodbye
@@ -9,24 +9,25 @@
 ## story_thanks
 * thanks
  - utter_thanks
- 
-## story_name
-* name{"name":"Sam"}
- - utter_greet
- 
 
-## story_joke_01
-* joke
- - action_joke
+## story_code_01
+* code{"code":"c12390"}
+ - action_code
  
-## story_joke_02
+## story_code_02
 * greet
- - utter_name
-* name{"name":"Lucy"} <!--- User response with an entity. In this case it represents user message 'My name is Lucy.' --> 
  - utter_greet
-* joke
- - action_joke
+* code{"name":"bachelor of science in it"}
+ - action_code
 * thanks
  - utter_thanks
+* goodbye
+ - utter_goodbye 
+ 
+## story_code_03
+* greet
+ - utter_greet
+* code{"code":"c12932"}
+ - action_code
 * goodbye
  - utter_goodbye 

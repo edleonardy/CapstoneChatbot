@@ -1,27 +1,54 @@
-# -*- coding: utf-8 -*-
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-from __future__ import unicode_literals
-
-import logging
-import requests
-import json
-from rasa_core_sdk import Action
-
-logger = logging.getLogger(__name__)
+# This files contains your custom actions which can be used to run
+# custom Python code.
+#
+# See this guide on how to implement these action:
+# https://rasa.com/docs/rasa/core/actions/#custom-actions/
 
 
-class ActionJoke(Action):
-    def name(self):
-        # define the name of the action which can then be included in training stories
-        return "action_joke"
+# This is a simple example for a custom action which utters "Hello World!"
 
-    def run(self, dispatcher, tracker, domain):
-        # what your action should do
-        request = json.loads(
-            requests.get("https://api.chucknorris.io/jokes/random").text
-        )  # make an api call
-        joke = request["value"]  # extract a joke from returned json response
-        dispatcher.utter_message(joke)  # send the message back to the user
+from typing import Any, Text, Dict, List
+
+from rasa_sdk import Action, Tracker
+from rasa_sdk.executor import CollectingDispatcher
+
+
+class ActionCode(Action):
+    def name(self) -> Text:
+        return "action_code"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        import directory_loader as dl
+        d = dl.Directory()
+
+        input_type = tracker.latest_message['entities'][0]['entity']
+        value = tracker.latest_message['entities'][0]['value']
+        if not value:
+            dispatcher.utter_message('I did not recognise that input.')
+            return []
+        if input_type == 'name':
+            results = d.search(value)
+            if len(results) == 0:
+                dispatcher.utter_message('Sorry, I could not find {} in the directory.'.format(value))
+                return []
+            elif len(results) > 1:
+                dispatcher.utter_message('There are multiple results for {}'.format(value))
+                return []
+            else:
+                result = d[results[0][0]]
+        elif input_type == 'code':
+            try:
+                result = d[value]
+            except KeyError:
+                dispatcher.utter_message('Sorry, {} does not exist in the directory.'.format(value))
+                return []
+        else:
+            dispatcher.utter_message('I did not recognise that input.')
+            return []
+        dispatcher.utter_message('{} {} is a {} at UTS. For more info, visit {}'.format(result.code(),
+                                                                                        result.get_name(),
+                                                                                        result.get_type(),
+                                                                                        result.url()))
         return []
