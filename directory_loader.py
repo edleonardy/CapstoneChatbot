@@ -36,8 +36,13 @@ class Directory:
         def code(self):
             if self._item_type == '':
                 return self._item_id
-            else:
+            if self._item_type == 'c':
                 return self._item_type + self._item_id
+            else:
+                return self._item_type.upper() + self._item_id
+
+        def just_code(self):
+            return self._item_id;
 
         def get_search_list(self):
             return [[self._name, self._item_id]]

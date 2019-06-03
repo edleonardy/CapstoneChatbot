@@ -10,24 +10,32 @@
 * thanks
  - utter_thanks
 
-## story_code_01
-* code{"code":"c12390"}
- - action_code
+## story_details_01
+* details{"code":"c12390"}
+ - action_details
  
-## story_code_02
+## story_details_02
 * greet
  - utter_greet
-* code{"name":"bachelor of science in it"}
- - action_code
+* details{"name":"bachelor of science in it"}
+ - action_details
 * thanks
  - utter_thanks
 * goodbye
  - utter_goodbye 
  
-## story_code_03
+## story_details_03
 * greet
  - utter_greet
-* code{"code":"c12932"}
- - action_code
+* details{"code":"c12932"}
+ - action_details
 * goodbye
+ - utter_goodbye 
+ 
+## story_details_04
+* greet
+ - utter_greet
+* details{"code":"31251"}
+ - action_details
+* details
  - utter_goodbye 

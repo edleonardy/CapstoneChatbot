@@ -3,7 +3,7 @@ intents:
 - goodbye
 - thanks
 - affirm
-- code
+- details
 - list
 - honours
 - combined
@@ -22,25 +22,46 @@ actions:
 - utter_thanks
 - utter_greet
 - utter_goodbye
-- action_code
+- action_details
 - action_list
 - action_tf
 - action_child
 
+slots:
+   code:
+      type: text
 
 templates:
-
   utter_greet:
-  - text: "Hi there! I'm Stu from UTS!"
+  - text: "Hi there! I am Stu from UTS!"
   - text: "Hi! My name is Stu!"
-  - text: "Hi there! I'm Stu. Do you have any questions about FEIT at UTS?"
+  - text: "Hi there! I am Stu. Do you have any questions about FEIT at UTS?"
+  - text: 'Hey! I am a chatbot from UTS. Ask me what I can do!'
+  - text: 'Hello! I am Stu and I am from UTS'
+
+  utter_code_does_not_exist:
+  - text: '{code} does not exist in the UTS directory,'
+  - text: 'Sorry, I could not find {code} in the UTS directory.'
+  - text: 'I cannot find {code} in the UTS directory.'
+
+  utter_name_does_not_exist:
+  - text: 'Sorry, I could not find anything called {name} in the UTS directory.'
+  - text: 'I cannot find {name} in the UTS directory. Sorry!'
 
   utter_goodbye:
   - text: "Bye"
   - text: "See ya!"
+  - text: 'Ciao!'
   - text: "Adios!"
+  - text: "Goodbye!"
 
   utter_thanks:
   - text: "No worries!"
-  - text: "Not a problem."
+  - text: "Not a problem!"
+  - text: 'You are welcome!'
+
+  utter_fallback:
+  - text: "Sorry I did not recognise that input. Can you try again?"
+  - text: "Sorry I did not get that. Could you try that again?"
+
 

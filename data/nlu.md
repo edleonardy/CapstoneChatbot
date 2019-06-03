@@ -14,10 +14,14 @@
 - i'm off
 - see you later alligator
 - we'll speak soon
+- cya mate
+- see ya mate
+- byee
 
 ## intent:greet
 - Hi
 - Hey
+- hey mate
 - Hi bot
 - Hey bot
 - Hello
@@ -31,15 +35,26 @@
 - hello everybody
 - hello is anybody there
 - hello robot
+- what's up bot
+- what's up
+- hey how's it going
+- hey how are you
+- hi bot how are you going
+- how are you going
 
 ## intent:thanks
 - Thanks
+- thanks mate
 - Thank you
 - Thank you so much
 - Thanks bot
 - Thanks for that
 - cheers
 - cheers bro
+- cheers mate
+- cheers cheers
+- ok cool thanks
+- ok coolio cheers
 - ok thanks!
 - perfect thank you
 - thanks a bunch for everything
@@ -56,6 +71,17 @@
 - for sure
 - yes yes yes
 - definitely
+- yeah
+- yep
+- yus
+- yas
+- indeed
+- yea
+- yes mate
+- sure mate
+- sure thing
+- absolutely mate
+- nah yeah
 
 ## intent:deny
 - no
@@ -64,9 +90,24 @@
 - nah
 - no not that
 - not that
-- no th
+- no no
+- nah man
+- not that mate
+- nahh mate
+- yeah nah
 
-## intent:code
+## intent:what_can_you_do
+- what can you do?
+- what can i ask you
+- what things can you do
+- what are the things i could ask you
+- things i can ask you
+- things you can do
+- things you do
+- what are you
+- how do you help me
+
+## intent:details
 - I'd like to know about [cbk90498](code)
 - What is [maj08441](code)
 - Do you know about [cbk90486](code)
@@ -83,7 +124,32 @@
 - can you tell me about [data structures and algorithms](name)
 - i'd like to know about [introduction to statistics](name)
 - tell me about [10923](name)
+- [c12093](code)
+- [cbk10293](code)
+- [innovation and entrepreneurship](name)
+- [the financial system](name)
 
+## intent::child
+- What are the contents of [c91953](code)
+- What subjects are in the major?
+- What subjects do i need to take for this
+- what subjects for this major
+- what subjects for this course
+- What subjects are in [19238](code)
+- Can you tell me what are in [19533](code)
+- What do i need to take in [12221](code)
+- What majors in the subject?
+- What do i need to take for [c10294](code)
+- What are the subjects in [cbk19284](code)
+- what subjects do i need to take in [c19239](code)
+- what are the subjects i will need to take in [c10855](code)
+- what are subjects in [bachelor of science in it](name)
+- what subjects do they have in [bachelor of it](name)
+- what subjects do i need to take for [bachelor of science it diploma professional practice](code)
+- what subjects in [bachelor of science games dev](name)
+- what are subjects for [bachelor business](name)
+- what majors are in [c02930](code)
+- what sub-majors in [cbk23982](code)
 
 ## intent:list
 - Can you show me the [courses](type) at UTS
@@ -157,27 +223,6 @@
 - how many cp do i need to complete for [bachelor of business](name)
 - how many cp do i need for [c19204](code)
 
-## intent::child
-- What are the contents of [c91953](code)
-- What subjects are in the major?
-- What subjects do i need to take for this
-- what subjects for this major
-- what subjects for this course
-- What subjects are in   [19238](code)
-- Can you tell me what are in [19533](code)
-- What do i need to take in [12221](code)
-- What majors in the subject?
-- What do i need to take for [c10294](code)
-- What are the subjects in [cbk19284](code)
-- what subjects do i need to take in [c19239](code)
-- what are the subjects i will need to take in [c10855](code)
-- what are subjects in [bachelor of science in it](name)
-- what subjects do they have in [bachelor of it](name)
-- what subjects do i need to take for [bachelor of science it diploma professional practice](code)
-- what subjects in [bachelor of science games dev](name)
-- what are subjects for [bachelor business](name)
-- what majors are in [c02930](code)
-- what sub-majors in [cbk23982](code)
 
 ## regex::code
 - [A-Z|a-z]{0,3}\d{5,6}
