@@ -53,6 +53,9 @@ class Directory:
         def get_type(self):
             return type_dict[self._item_type].lower()
 
+        def get_children(self):
+            return self._children
+
         def url(self):
             if self._item_type == '':
                 return 'https://handbook.uts.edu.au/subjects/' + self._item_id + '.html'
@@ -99,9 +102,9 @@ class Directory:
             super().__init__(item_id, name, 'c', '', [] if children is None else children)
             self._other_names = [] if other_names is None else other_names
             self._atar = atar
-            self._hons = hons
-            self._prof_prac = prof_prac
-            self._combined = combined
+            self._hons = True if hons == '1' else False
+            self._prof_prac = True if prof_prac == '1' else False
+            self._combined = True if combined == '1' else False
             self._location = location
 
         def url(self):
@@ -109,6 +112,21 @@ class Directory:
 
         def get_search_list(self):
             return super().get_search_list() + [[o, self._item_id] for o in self._other_names]
+
+        def get_atar(self):
+            return self._atar
+
+        def is_hons(self):
+            return self._hons
+
+        def is_prof_prac(self):
+            return self._prof_prac
+
+        def is_combined(self):
+            return self._combined
+
+        def get_location(self):
+            return self._atar
 
         def __repr__(self):
             return ('c' + str(self._item_id)).rjust(3 + cp_length + id_length) + ' ' + self._name
