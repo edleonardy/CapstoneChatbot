@@ -217,3 +217,97 @@ class ActionCombined(Action):
             dispatcher.utter_message('{} {} is not a course at UTS. It is a a {} at UTS. It contains:'.format(
                 result.code(), result.get_name(), result.get_type()))
         return [SlotSet("code", result.just_code())]
+
+
+class ActionCreditPoints(Action):
+    def name(self) -> Text:
+        return "action_credit_points"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        result = init_code(dispatcher, tracker, domain)
+
+        if result is None:
+            return []
+
+        elif not result.is_type(''):
+            dispatcher.utter_message(
+                '{} {} is a {} with {} credit points.'.format(result.code(), result.get_name(), result.get_type(),
+                                                              result.cp()))
+
+        else:
+            dispatcher.utter_message('{} {} consists of {} credit points in total.'.format(result.code(),
+                                                                                           result.get_name(),
+                                                                                           result.cp()))
+        return [SlotSet("code", result.just_code())]
+
+
+class ActionDuration(Action):
+    def name(self) -> Text:
+        return "action_duration"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        result = init_code(dispatcher, tracker, domain)
+
+        full_load = 48
+
+        if result is None:
+            return []
+
+        elif result.is_type('c'):
+            years = round(result.cp()/full_load)
+            dispatcher.utter_message(
+                '{} {} has {} credit points which can be completed for {} years full time.'.format(result.code(),
+                                                                                                   result.get_name(),
+                                                                                                   result.cp(),
+                                                                                                   years))
+
+        else:
+            dispatcher.utter_message('{} {} is not a course.'.format(result.code(), result.get_name()))
+        return [SlotSet("code", result.just_code())]
+
+
+class ActionFees(Action):
+    def name(self) -> Text:
+        return "action_fees"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        result = init_code(dispatcher, tracker, domain)
+
+        url = 'https://cis.uts.edu.au/fees/course-fees.cfm'
+
+        dispatcher.utter_message('For fee details please visit {}.'.format(url))
+
+        return [SlotSet("code", result.just_code())]
+
+
+class ActionAtar(Action):
+    def name(self) -> Text:
+        return "action_atar"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        result = init_code(dispatcher, tracker, domain)
+
+        if result is None:
+            return []
+
+        elif result.is_type('c'):
+            atar = result.get_atar()
+            if atar is None:
+                dispatcher.utter_message('Admission for {} {} is not based on ATAR. For more info, visit {}'.format(
+                    result.code(), result.get_name(), result.url()))
+            else:
+                dispatcher.utter_message('{} {} has a ATAR requirement of {}.'.format(result.code(),
+                                                                                      result.get_name(),
+                                                                                      atar))
+
+        else:
+            dispatcher.utter_message('{} {} is not a course.'.format(result.code(), result.get_name()))
+        return [SlotSet("code", result.just_code())]

@@ -112,10 +112,10 @@
  - utter_greet
 * what_can_you_do
  - utter_what_can_you_do
-* children{"code":"c12932"}
- - slot{"code":"c12932"}
+* children{"name":"bachelor of science it"}
+ - slot{"code":"10148"}
  - action_children
- - slot{"code":"12932"}
+ - slot{"code":"10148"}
 * goodbye
  - utter_goodbye 
  
@@ -131,8 +131,7 @@
  - action_details
  - slot{"code":"31241"}
 * goodbye
- - utter_goodbye 
- - utter_goodbye 
+ - utter_goodbye  
 
 ## story_hons
 * greet
@@ -190,9 +189,164 @@
 * thanks
  - utter_thanks
     
-## story_combined_01
+## story_credit_points
 * greet
  - utter_greet
-* combined{"code":"c23467"}
+* credit_points{"code":"c23467"}
  - slot{"code":"c23467"}
- - action_combined
+ - action_credit_points
+ 
+## story_credit_points_01
+* greet
+    - utter_greet
+* details{"code":"41004"}
+    - slot{"code":"41004"}
+    - action_details
+    - slot{"code":"41004"}
+* credit_points
+    - action_credit_points
+    - slot{"code":"41004"}
+* credit_points{"code": "c10219"}
+    - slot{"code": "c10219"}
+    - action_credit_points
+    - slot{"code":"10219"}
+ 
+## story_credit_points_02
+* details{"code":"c12390"}
+ - slot{"code":"c12390"}
+ - action_credit_points
+ - slot{"code":"12390"}
+* credit_points
+ - action_credit_points
+ - slot{"code":"12390"}
+ 
+## story_credit_points_03
+* greet
+ - utter_greet
+* details{"name":"bachelor in business bachelor of science in it"}
+ - action_details
+ - slot{"code":"10219"}
+* credit_points
+ - action_credit_points
+ - slot{"code":"10219"}
+* goodbye
+ - utter_goodbye 
+ 
+## story_credit_points_04
+* greet
+ - utter_greet
+* what_can_you_do
+ - utter_what_can_you_do
+* credit_points{"code":"c12932"}
+ - slot{"code":"c12932"}
+ - action_credit_points
+ - slot{"code":"12932"}
+* goodbye
+ - utter_goodbye 
+ 
+## story_credit_points_05
+* greet
+ - utter_greet
+* credit_points{"code":"c10219"}
+ - slot{"code":"c10219"}
+ - action_credit_points
+ - slot{"code":"10219"}
+* details
+ - slot{"code":"10219"}
+ - action_details
+* goodbye
+ - utter_goodbye 
+ 
+## story_duration
+* greet
+    - utter_greet
+* details{"code":"41004"}
+    - slot{"code":"41004"}
+    - action_details
+    - slot{"code":"41004"}
+* duration
+    - action_duration
+    - slot{"code":"41004"}
+* duration{"code": "c10219"}
+    - slot{"code": "c10219"}
+    - action_duration
+    - slot{"code":"10219"}
+ 
+## story_duration_01
+* details{"code":"c12390"}
+ - slot{"code":"c12390"}
+ - action_credit_points
+ - slot{"code":"12390"}
+* duration
+ - action_duration
+ - slot{"code":"12390"}
+ 
+## story_duration_02
+* greet
+ - utter_greet
+* details{"name":"bachelor in business bachelor of science in it"}
+ - action_details
+ - slot{"code":"10219"}
+* duration
+ - action_duration
+ - slot{"code":"10219"}
+* goodbye
+ - utter_goodbye 
+ 
+## story_duration_04
+* greet
+ - utter_greet
+* what_can_you_do
+ - utter_what_can_you_do
+* duration{"code":"c12932"}
+ - slot{"code":"c12932"}
+ - action_duration
+ - slot{"code":"12932"}
+* goodbye
+ - utter_goodbye 
+ 
+## story_fees
+* greet
+ - utter_greet
+* fees{"code":"c10148"}
+ - slot{"code":"c10148"}
+ - action_fees
+ - slot{"code":"10148"}
+* details
+ - action_details
+ - slot{"code":"10148"}
+* thanks
+ - utter_thanks
+ 
+## story_fees_01
+* greet
+ - utter_greet
+* fees{"code":"c23467"}
+ - slot{"code":"c23467"}
+ - action_fees
+ - slot{"code":"23467"}
+ 
+## story_atar
+* greet
+ - utter_greet
+* what_can_you_do
+ - utter_what_can_you_do
+* atar{"code":"c12932"}
+ - slot{"code":"c12932"}
+ - action_atar
+ - slot{"code":"12932"}
+* goodbye
+ - utter_goodbye 
+ 
+## story_atar_01
+* greet
+ - utter_greet
+* details{"code":"c10219"}
+ - slot{"code":"c10219"}
+ - action_details
+ - slot{"code":"10219"}
+* atar
+ - slot{"code":"10219"}
+ - action_atar
+* goodbye
+ - utter_goodbye 

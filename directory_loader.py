@@ -101,7 +101,7 @@ class Directory:
         def __init__(self, item_id, name, atar, hons, prof_prac, combined, location, other_names=None, children=None):
             super().__init__(item_id, name, 'c', '', [] if children is None else children)
             self._other_names = [] if other_names is None else other_names
-            self._atar = atar
+            self._atar = atar if atar != '' else None
             self._hons = True if hons == '1' else False
             self._prof_prac = True if prof_prac == '1' else False
             self._combined = True if combined == '1' else False

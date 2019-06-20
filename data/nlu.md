@@ -22,6 +22,18 @@
 - what subjects do i need to take for that subject?
 - what subjects are in [c10219](code)
 
+## intent:fees
+- How much does the course cost?
+- How much is the course?
+- How much are the fees?
+- How expensive is [c12039](code)
+- Can you tell me the cost for [c10230](code)
+- Fees for [bachelor of it](name) please
+- How much is [c10231](code)?
+- What are the costs for [c19232](code)
+- How much does this course cost?
+- How much does [bachelor of science in it](name) cost?
+
 ## intent:credit_points
 - How many credit points are in the course?
 - How may credit points do I need to complete to graduate?
@@ -53,6 +65,12 @@
 - How long years [bscit](name)
 
 ## intent:affirm
+- okay
+- ok cool
+- okurr
+- yep yep
+- okey
+- okii
 - yes
 - yes sure
 - absolutely
@@ -170,6 +188,9 @@
 - hi bot how are you going
 - how are you going
 - hello
+- ello mate
+- heyhey
+- helloooo
 
 ## intent:honours
 - Is the course a honours degree
@@ -219,6 +240,16 @@
 - amazing, thanks
 - cool, thanks
 - cool thank you
+
+## intent:atar
+- What is the atar requirements for this subject
+- What is the atar requirements
+- Tell me about the atar
+- Tell me the ATAR for [c10148](code)
+- What is the atar for [bachelor of business bachelor of science in it](name)
+- What is tje atar for [c10210](code)
+- Tell me the atar for [bachelor of science it](name)
+- What is the atar cutoff [12034](code)
 
 ## intent:what_can_you_do
 - what can you do?
